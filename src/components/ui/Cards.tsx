@@ -5,18 +5,30 @@ import { faHouse, faMoneyCheckDollar } from '@fortawesome/free-solid-svg-icons';
 import iconeFechar from '../../../public/images/icone-fechar.svg';
 import Image from 'next/image';
 
-const Card = ({ setOpenModal }) => {
+interface CardProps {
+  setOpenModal: (value: boolean) => void;
+}
+
+const Card: React.FC<CardProps> = ({ setOpenModal }) => {
   const arrayCards = [
     {
       titulo: 'Home',
       icone: (
-        <FontAwesomeIcon icon={faHouse} size="2xl" style={{color: "#FFD43B",}} />
+        <FontAwesomeIcon
+          icon={faHouse}
+          size="2xl"
+          style={{ color: '#FFD43B' }}
+        />
       ),
     },
     {
       titulo: 'Capturar foto',
       icone: (
-        <FontAwesomeIcon icon={faImage} size="2xl" style={{color: "#63E6BE",}} />
+        <FontAwesomeIcon
+          icon={faImage}
+          size="2xl"
+          style={{ color: '#63E6BE' }}
+        />
       ),
     },
     {
@@ -99,12 +111,7 @@ const Card = ({ setOpenModal }) => {
         className="self-end cursor-pointer mb-3"
         onClick={() => setOpenModal(false)}
       >
-        <Image
-          src={iconeFechar}
-          width={24}
-          height={24}
-          alt=""
-        />
+        <Image src={iconeFechar} width={24} height={24} alt="" />
       </button>
       <div className="flex items-center justify-between mb-5">
         <h2 className="text-black font-semibold text-xl">Services</h2>

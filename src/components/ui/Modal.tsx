@@ -1,12 +1,12 @@
 import React from 'react';
 
-const Modal = ({ isOpen, setOpenModal, children }) => {
-  document.addEventListener('keydown', ({ key }) => {
-    if (key === 'Escape') {
-      setOpenModal(false);
-    }
-  });
+interface ModalProps {
+  isOpen: boolean;
+  setOpenModal: (value: boolean) => void;
+  children: React.ReactNode;
+}
 
+const Modal: React.FC<ModalProps> = ({ isOpen, setOpenModal, children }) => {
   if (isOpen) {
     return <div className="absolute right-3">{children}</div>;
   }
