@@ -106,7 +106,7 @@ const Card: React.FC<CardProps> = ({ setOpenModal }) => {
   const [quantidade, setQuantidade] = React.useState(9);
 
   return (
-    <div className="bg-slate-300 p-5 rounded-xl flex flex-col w-[440px] absolute right-2">
+    <div className="bg-slate-200 p-5 rounded-xl flex flex-col w-[440px] absolute right-2">
       <button
         className="self-end cursor-pointer mb-3"
         onClick={() => setOpenModal(false)}
